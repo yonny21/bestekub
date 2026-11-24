@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ቤስት የእቃዎች እቁብ | በምዝገባ ብቻ ምርጥ እቃዎችን ያሸንፉ</title>
+  <meta name="description" content="በምዝገባ ብቻ የተለያዩ ምርጥ እቃዎችን ለማግኘት እድልዎን አሁኑኑ ይሞክሩ ፡፡ ቁጥር ውሰድ!" />
+
+  <!-- Google Fonts: Noto Sans Ethiopic & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#070913',
+            cardbg: '#0f1426',
+            neonGold: '#fbbf24',
+            neonEmerald: '#10b981',
+            neonCyan: '#06b6d4',
+            neonRose: '#f43f5e',
+          },
+          animation: {
+            'pulse-glow': 'pulseGlow 2s infinite ease-in-out',
+            'shimmer': 'shimmer 2.5s linear infinite',
+            'float-slow': 'floatSlow 5s ease-in-out infinite',
+            'radar': 'radarPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 18px rgba(251, 191, 36, 0.55), 0 0 36px rgba(245, 158, 11, 0.35)' },
+              '50%': { boxShadow: '0 0 28px rgba(251, 191, 36, 0.9), 0 0 54px rgba(245, 158, 11, 0.65)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            radarPing: {
+              '75%, 100%': { transform: 'scale(2.2)', opacity: '0' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Base Dark Glassmorphic Theme */
+    body {
+      background-color: #070913;
+      color: #f8fafc;
+      font-family: 'Noto Sans Ethiopic', 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Mesh Background */
+    .ambient-bg {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.14) 0%, transparent 42%),
+        radial-gradient(circle at 85% 20%, rgba(251, 191, 36, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 60%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        #070913;
+    }
+
+    /* Glass Card Styling */
+    .glass-panel {
+      background: rgba(17, 24, 43, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-card {
+      background: linear-gradient(165deg, rgba(23, 31, 56, 0.85) 0%, rgba(11, 15, 29, 0.94) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease, box-shadow 0.32s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(251, 191, 36, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.75), 0 0 24px rgba(251, 191, 36, 0.16);
+    }
+
+    /* Primary High-Conversion CTA Button */
+    .cta-btn {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+      color: #090d16;
+      font-weight: 800;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.02);
+      filter: brightness(1.06);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.97);
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: translateX(-150%) skewX(-20deg);
+      animation: btnSweep 3.2s infinite ease-in-out;
+    }
+
+    @keyframes btnSweep {
+      0%, 55% { transform: translateX(-160%) skewX(-20deg); }
+      100% { transform: translateX(280%) skewX(-20deg); }
+    }
+
+    /* Smooth Horizontal Ticker Marquee */
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: tickerScroll 42s linear infinite;
+    }
+
+    .ticker-wrapper:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070913;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+
+    /* Reveal Animation on Scroll */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="ambient-bg min-h-screen pb-24 md:pb-8 selection:bg-amber-400 selection:text-slate-950">
+
+  <!-- ===================================================================== -->
+  <!-- 1. PINNED / STICKY TOP HEADER WITH LIVE BADGE & PRIMARY CTA           -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-white/10 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
+      <!-- Brand Identity + Live Indicator -->
+      <div class="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/25 shrink-0">
+          <i class="fa-solid fa-trophy text-slate-950 text-lg sm:text-xl"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-xl font-black tracking-tight text-white truncate">
+              ቤስት የእቃዎች እቁብ
+            </h1>
+            <!-- Animated Modern LIVE Badge -->
+            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/50 text-rose-400 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider shrink-0">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+              </span>
+              LIVE
+            </span>
+          </div>
+          <p class="text-[11px] sm:text-xs text-slate-300 truncate hidden xs:block">
+            የቀጥታ እጣ አወጣጥ • 100% ታማኝ
+          </p>
+        </div>
+      </div>
+
+      <!-- Pinned Top CTA Button -->
+      <a href="https://addismobileapps.com/sms.html"
+         class="cta-btn animate-pulse-glow px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-sm sm:text-base flex items-center gap-2 shrink-0 shadow-xl">
+        <i class="fa-solid fa-ticket text-slate-950"></i>
+        <span>ቁጥር ውሰድ</span>
+        <i class="fa-solid fa-arrow-right text-xs sm:text-sm"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. ANIMATED RECENT REGISTRANTS TICKER (ETHIOPIAN PHONE + 6-DIGIT #)   -->
+  <!-- ===================================================================== -->
+  <section aria-label="የቅርብ ጊዜ ተመዝጋቢዎች" class="relative z-40 bg-slate-950/90 border-b border-emerald-500/25 py-2.5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 flex items-center gap-3">
+      <!-- Live Feed Label Pill -->
+      <div class="flex items-center gap-2 bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full text-xs font-bold shrink-0">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+        </span>
+        <span class="hidden sm:inline">አሁን የተመዘገቡ</span>
+        <span class="sm:hidden">LIVE ምዝገባ</span>
+      </div>
+
+      <!-- Smooth Scrolling Marquee + Live Dynamic Injection -->
+      <div class="ticker-wrapper relative flex-1 overflow-hidden mask-edges">
+        <div id="registrants-ticker-track" class="ticker-track gap-3 sm:gap-4 items-center">
+          <!-- Populated dynamically via JavaScript with Ethiopian numbers + masked stars + 6-digit lottery numbers -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. HERO SECTION & SLIDING PRIZE SHOWCASE CAROUSEL                     -->
+  <!-- ===================================================================== -->
+  <section class="relative pt-6 pb-8 sm:pt-12 sm:pb-14 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      
+      <!-- Left Column: High-Impact Headline, Subheadline & Primary CTA -->
+      <div class="lg:col-span-6 space-y-5 sm:space-y-6 text-center lg:text-left">
+        <!-- Live Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold shadow-lg">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-80"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+          </span>
+          <span>ቀጥታ ምዝገባ ተጀምሯል • እጣዎን አሁኑኑ ይያዙ</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white">
+          <span class="bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+            ቤስት የእቃዎች እቁብ
+          </span>
+        </h2>
+
+        <p class="text-base sm:text-xl text-slate-200 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          በምዝገባ ብቻ የተለያዩ ምርጥ እቃዎችን ለማግኘት እድልዎን አሁኑኑ ይሞክሩ ፡፡
+        </p>
+
+        <!-- Primary Hero CTA Group -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-1">
+          <a href="https://addismobileapps.com/sms.html"
+             class="cta-btn animate-pulse-glow w-full sm:w-auto px-8 py-4 rounded-2xl text-lg sm:text-xl font-black flex items-center justify-center gap-3 shadow-2xl">
+            <i class="fa-solid fa-ticket text-xl"></i>
+            <span>ቁጥር ውሰድ</span>
+            <i class="fa-solid fa-chevron-right text-sm"></i>
+          </a>
+
+          <a href="#prizes-grid"
+             class="w-full sm:w-auto px-6 py-4 rounded-2xl glass-panel hover:bg-white/10 border border-white/15 text-white font-bold text-base flex items-center justify-center gap-2 transition">
+            <i class="fa-solid fa-gift text-amber-400"></i>
+            <span>ሁሉንም እቃዎች ይመልከቱ (18)</span>
+          </a>
+        </div>
+
+        <!-- Quick Trust Stats -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-3 max-w-lg mx-auto lg:mx-0">
+          <div class="glass-panel rounded-2xl p-3 text-center">
+            <div class="text-lg sm:text-2xl font-black text-amber-400">18+</div>
+            <div class="text-[11px] sm:text-xs text-slate-300 font-medium">ታላላቅ ሽልማቶች</div>
+          </div>
+          <div class="glass-panel rounded-2xl p-3 text-center">
+            <div class="text-lg sm:text-2xl font-black text-emerald-400 flex items-center justify-center gap-1">
+              <span>LIVE</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            </div>
+            <div class="text-[11px] sm:text-xs text-slate-300 font-medium">በቲክቶክ ቀጥታ</div>
+          </div>
+          <div class="glass-panel rounded-2xl p-3 text-center">
+            <div class="text-lg sm:text-2xl font-black text-cyan-400">100%</div>
+            <div class="text-[11px] sm:text-xs text-slate-300 font-medium">ታማኝ እና ግልጽ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Sliding Showcase of Top Prizes -->
+      <div class="lg:col-span-6">
+        <div class="relative rounded-3xl glass-panel p-3 sm:p-4 border border-amber-400/25 shadow-2xl overflow-hidden group">
+          <!-- Decorative Glow -->
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Slider Viewport -->
+          <div id="hero-slider" class="relative h-[340px] sm:h-[420px] rounded-2xl overflow-hidden select-none touch-pan-y">
+            <!-- Slides injected dynamically by JS -->
+          </div>
+
+          <!-- Slider Navigation Controls -->
+          <button id="prev-slide" aria-label="ቀዳሚ እቃ"
+                  class="absolute left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950/75 hover:bg-amber-400 hover:text-slate-950 text-white border border-white/15 flex items-center justify-center transition backdrop-blur-md">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="next-slide" aria-label="ቀጣይ እቃ"
+                  class="absolute right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950/75 hover:bg-amber-400 hover:text-slate-950 text-white border border-white/15 flex items-center justify-center transition backdrop-blur-md">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- Pagination Dots -->
+          <div id="slider-dots" class="flex items-center justify-center gap-2 mt-3.5">
+            <!-- Dots injected dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. IMPORTANT TIKTOK LIVE TRANSPARENCY NOTICE BANNER (ማሳሰቢያ)          -->
+  <!-- ===================================================================== -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+    <div class="relative rounded-3xl p-5 sm:p-7 bg-gradient-to-r from-rose-950/80 via-slate-900/90 to-amber-950/70 border border-rose-500/40 shadow-2xl overflow-hidden">
+      <div class="absolute right-0 top-0 w-40 h-40 bg-rose-500/15 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
+        <!-- Animated TikTok Live Icon Box -->
+        <div class="relative shrink-0">
+          <div class="w-16 h-16 rounded-2xl bg-slate-950 border border-rose-500/50 flex items-center justify-center shadow-lg shadow-rose-500/20">
+            <i class="fa-brands fa-tiktok text-3xl text-white"></i>
+          </div>
+          <span class="absolute -top-2 -right-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider shadow-md animate-bounce">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+            LIVE
+          </span>
+        </div>
+
+        <!-- Exact Required Notice Text -->
+        <div class="flex-1 space-y-1.5">
+          <div class="inline-flex items-center gap-2 text-rose-400 text-xs sm:text-sm font-extrabold uppercase tracking-wide">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>የታማኝነት ማረጋገጫ</span>
+          </div>
+          <p class="text-base sm:text-xl font-bold text-white leading-relaxed">
+            ማሳሰቢያ ፦ የእቁቡን ታማኝነትን ለማረጋገጥ በቲክቶክ ላይቭ በቀጣይ ቀናት ውስጥ ይወጣል ።
+          </p>
+        </div>
+
+        <!-- Quick Action Button -->
+        <a href="https://addismobileapps.com/sms.html"
+           class="cta-btn px-6 py-3.5 rounded-2xl text-sm sm:text-base font-black shrink-0 flex items-center gap-2 shadow-lg">
+          <span>ቁጥር ውሰድ</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 5. ALL PRIZE ITEMS GRID WITH INDIVIDUAL LIVE COUNTDOWNS & CTAS         -->
+  <!-- ===================================================================== -->
+  <main id="prizes-grid" class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Section Header + Category Filter Pills -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="inline-flex items-center gap-2 text-amber-400 text-xs sm:text-sm font-bold mb-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          <span>የእቁብ እቃዎች ዝርዝር</span>
+        </div>
+        <h3 class="text-2xl sm:text-4xl font-black text-white">
+          የሚፈልጉትን እቃ ይምረጡና <span class="text-amber-400">ቁጥር ይውሰዱ</span>
+        </h3>
+      </div>
+
+      <!-- Interactive Filter Tabs -->
+      <div id="filter-tabs" class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+        <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-400 text-slate-950 transition shrink-0">
+          ሁሉም እቃዎች (18)
+        </button>
+        <button data-filter="tech" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold glass-panel text-slate-200 hover:text-white transition shrink-0">
+          ስልክ እና ኤሌክትሮኒክስ
+        </button>
+        <button data-filter="home" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold glass-panel text-slate-200 hover:text-white transition shrink-0">
+          የቤት እቃዎች
+        </button>
+        <button data-filter="food" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold glass-panel text-slate-200 hover:text-white transition shrink-0">
+          ምግብ እና ሌሎች
+        </button>
+      </div>
+    </div>
+
+    <!-- Cards Container (18 Items Rendered Dynamically) -->
+    <div id="items-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      <!-- Prize Cards injected cleanly via JavaScript -->
+    </div>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 6. MID/BOTTOM HIGH-CONVERSION BANNER                                  -->
+  <!-- ===================================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 mt-14 sm:mt-20">
+    <div class="relative rounded-3xl p-7 sm:p-12 bg-gradient-to-br from-amber-500/20 via-slate-900 to-emerald-500/20 border border-amber-400/35 text-center overflow-hidden shadow-2xl">
+      <div class="max-w-2xl mx-auto space-y-5 relative z-10">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs font-extrabold">
+          <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+          እድልዎን አያሳልፉ!
+        </span>
+        <h3 class="text-2xl sm:text-4xl font-black text-white leading-snug">
+          በምዝገባ ብቻ የእነዚህ ምርጥ እቃዎች ባለቤት ይሁኑ!
+        </h3>
+        <p class="text-sm sm:text-lg text-slate-300">
+          አሁኑኑ ከታች ያለውን ቁልፍ በመጫን የእቁብ እጣ ቁጥርዎን ይውሰዱ።
+        </p>
+        <div class="pt-2">
+          <a href="https://addismobileapps.com/sms.html"
+             class="cta-btn animate-pulse-glow inline-flex items-center justify-center gap-3 px-9 py-4 sm:py-5 rounded-2xl text-lg sm:text-2xl font-black shadow-2xl w-full sm:w-auto">
+            <i class="fa-solid fa-ticket"></i>
+            <span>ቁጥር ውሰድ</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 7. FOOTER                                                             -->
+  <!-- ===================================================================== -->
+  <footer class="mt-14 border-t border-white/10 bg-slate-950/80 py-10 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div class="space-y-2 max-w-xl">
+        <div class="flex items-center justify-center md:justify-start gap-2.5">
+          <i class="fa-solid fa-trophy text-amber-400 text-xl"></i>
+          <span class="text-lg font-black text-white">ቤስት የእቃዎች እቁብ</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          ማሳሰቢያ ፦ የእቁቡን ታማኝነትን ለማረጋገጥ በቲክቶክ ላይቭ በቀጣይ ቀናት ውስጥ ይወጣል ።
+        </p>
+      </div>
+
+      <a href="https://addismobileapps.com/sms.html"
+         class="cta-btn px-7 py-3.5 rounded-2xl text-base font-black flex items-center gap-2 shrink-0">
+        <i class="fa-solid fa-ticket"></i>
+        <span>ቁጥር ውሰድ</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 8. FLOATING STICKY BOTTOM MOBILE CTA BAR                              -->
+  <!-- ===================================================================== -->
+  <div class="fixed bottom-0 inset-x-0 z-50 md:hidden glass-panel border-t border-amber-400/30 p-3 shadow-[0_-10px_30px_rgba(0,0,0,0.85)]">
+    <a href="https://addismobileapps.com/sms.html"
+       class="cta-btn animate-pulse-glow w-full py-3.5 rounded-xl text-base font-black flex items-center justify-center gap-2.5 shadow-xl">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-950"></span>
+      </span>
+      <span>ቁጥር ውሰድ</span>
+      <i class="fa-solid fa-arrow-right text-sm"></i>
+    </a>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT LOGIC: DATA, CAROUSEL, TICKER & LIVE COUNTDOWN TIMERS      -->
+  <!-- ===================================================================== -->
+  <script>
+    const CTA_URL = "https://addismobileapps.com/sms.html";
+
+    // Complete Prize Items List (All 16 User Requested Items + 2 High-Demand Bonus Items)
+    const PRIZE_ITEMS = [
+      {
+        id: 1,
+        name: "አይፎን 17 pro max",
+        subtitle: "iPhone 17 Pro Max • 512GB Titanium",
+        category: "tech",
+        badge: "ከፍተኛ ተፈላጊ",
+        daysLeft: 3,
+        hoursOffset: 14,
+        image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 2,
+        name: "ሳምሰንግ ultra S26",
+        subtitle: "Samsung Galaxy S26 Ultra • AI Edition",
+        category: "tech",
+        badge: "አዲስ ሞዴል",
+        daysLeft: 4,
+        hoursOffset: 9,
+        image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 3,
+        name: "ላፕቶፕ HP core i5 11th generation",
+        subtitle: "HP Pavilion Core i5 11th Gen • SSD",
+        category: "tech",
+        badge: "ለስራ እና ትምህርት",
+        daysLeft: 5,
+        hoursOffset: 18,
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 4,
+        name: "ፕሌይ ስቴሽን 5",
+        subtitle: "Sony PlayStation 5 Console + Controller",
+        category: "tech",
+        badge: "ጌሚንግ",
+        daysLeft: 4,
+        hoursOffset: 21,
+        image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 5,
+        name: "Popular 55 ኢንች ስማርት ቲቪ",
+        subtitle: "Popular 55\" 4K UHD Frameless Smart TV",
+        category: "home",
+        badge: "4K Ultra HD",
+        daysLeft: 6,
+        hoursOffset: 11,
+        image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 6,
+        name: "ቴክኖ ስፓርክ",
+        subtitle: "Tecno Spark Smartphone • Dual SIM",
+        category: "tech",
+        badge: "ምርጥ ስልክ",
+        daysLeft: 2,
+        hoursOffset: 16,
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+        featured: false
+      },
+      {
+        id: 7,
+        name: "callus ፓወር ባንክ 31500",
+        subtitle: "Callus 31,500mAh Fast Charging Power Bank",
+        category: "tech",
+        badge: "ፈጣን ቻርጀር",
+        daysLeft: 2,
+        hoursOffset: 8,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpUYeGpnED0QTqQtlqXDaooNNPRCsAAI1xhNnnU3auuQ&s=10",
+        featured: false
+      },
+      {
+        id: 8,
+        name: "Roshan ዲጂታል ስቶቭ",
+        subtitle: "Roshan Touch Digital Induction Stove",
+        category: "home",
+        badge: "ዘመናዊ ማብሰያ",
+        daysLeft: 3,
+        hoursOffset: 19,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFBuUzJ5_MeaGLQcRRjwT_hUPiU48mNCPhDVRwRH6j5w&s=10",
+        featured: false
+      },
+      {
+        id: 9,
+        name: "ኦቨን 60x60",
+        subtitle: "60x60 Full Standing Gas & Electric Oven",
+        category: "home",
+        badge: "ለኩሽና",
+        daysLeft: 5,
+        hoursOffset: 7,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG8yDn5SVgIRsM2dCMDWaRZdJQBsf1xRo7sK7zhFkK_w&s=10",
+        featured: false
+      },
+      {
+        id: 10,
+        name: "ቁም ሳጥን",
+        subtitle: "ዘመናዊ ባለ ብዙ ክፍል የልብስ ቁም ሳጥን",
+        category: "home",
+        badge: "የቤት እቃ",
+        daysLeft: 7,
+        hoursOffset: 12,
+        image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80",
+        featured: false
+      },
+      {
+        id: 11,
+        name: "ሙሉ ሶፋ",
+        subtitle: "ምቹ እና ዘመናዊ ሙሉ የሳሎን ሶፋ",
+        category: "home",
+        badge: "ልዩ የቤት እቃ",
+        daysLeft: 8,
+        hoursOffset: 15,
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+        featured: true
+      },
+      {
+        id: 12,
+        name: "የ 1 አመት ያልተገደበ ኢንተርኔት",
+        subtitle: "1 Year Unlimited High-Speed Internet Package",
+        category: "tech",
+        badge: "365 ቀናት ሙሉ",
+        daysLeft: 3,
+        hoursOffset: 10,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_q6XcxvVDtop6P2Yfis-MdlZiP4C_4i-ohYT3RfyGQ&s=10",
+        featured: false
+      },
+      {
+        id: 13,
+        name: "የዘይት መጭመቂያ ማሽን",
+        subtitle: "Automatic Oil Press Extractor Machine",
+        category: "home",
+        badge: "ለቤት እና ለስራ",
+        daysLeft: 6,
+        hoursOffset: 20,
+        image: "https://pictures-ethiopia.jijistatic.com/13927989_NjIwLTYwNy1hYzIwOWI3Yzll.webp",
+        featured: false
+      },
+      {
+        id: 14,
+        name: "10 ባለ 5 ሊትር ዘይት",
+        subtitle: "50 Liters Pure Cooking Oil Supply",
+        category: "food",
+        badge: "የቤት ፍጆታ",
+        daysLeft: 4,
+        hoursOffset: 6,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVXftJoFi6kDfllqhO6hyAAhcZU-N6nRcjCh87689zqg&s=10",
+        featured: false
+      },
+      {
+        id: 15,
+        name: "ሙክት በግ",
+        subtitle: "ለበዓል እና ለድግስ የሚሆን ሙክት በግ",
+        category: "food",
+        badge: "ልዩ ሽልማት",
+        daysLeft: 3,
+        hoursOffset: 17,
+        image: "https://pictures-ethiopia.jijistatic.com/11555137_MzAwLTIyOC0zMWZiODQ0Yzg5.webp",
+        featured: false
+      },
+      {
+        id: 16,
+        name: "100 ኪሎ ጤፍ",
+        subtitle: "1 ኩንታል (100 ኪሎ) ምርጥ ነጭ ጤፍ",
+        category: "food",
+        badge: "100 ኪሎ",
+        daysLeft: 4,
+        hoursOffset: 13,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzfuTbXvTTF0441xwOvl_kUp2cNNl5YHDURt5O8exjsg&s=10",
+        featured: false
+      },
+      {
+        id: 17,
+        name: "ዘመናዊ ባለ ሁለት በር ፍሪጅ",
+        subtitle: "Double Door Frost-Free Refrigerator",
+        category: "home",
+        badge: "ተጨማሪ ሽልማት",
+        daysLeft: 6,
+        hoursOffset: 14,
+        image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=800&q=80",
+        featured: false
+      },
+      {
+        id: 18,
+        name: "አውቶማቲክ የልብስ ማጠቢያ ማሽን",
+        subtitle: "Front-Load Smart Washing Machine",
+        category: "home",
+        badge: "ተጨማሪ ሽልማት",
+        daysLeft: 5,
+        hoursOffset: 19,
+        image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=800&q=80",
+        featured: false
+      }
+    ];
+
+    // Pre-compute exact target timestamps for each item
+    const now = Date.now();
+    PRIZE_ITEMS.forEach((item, idx) => {
+      const extraMinutes = (idx * 17) % 59;
+      item.targetTime = now + (item.daysLeft * 86400000) + (item.hoursOffset * 3600000) + (extraMinutes * 60000);
+    });
+
+    // =========================================================================
+    // 1. RECENT REGISTRANTS TICKER GENERATOR (ETHIOPIAN NUMBERS + 6-DIGIT #)
+    // =========================================================================
+    function generateEthiopianRegistrant() {
+      const prefixes = ['0911', '0912', '0913', '0920', '0921', '0923', '0930', '0944', '0966', '0977', '0703', '0712'];
+      const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+      const mid1 = String(Math.floor(10 + Math.random() * 89));
+      const mid2 = String(Math.floor(10 + Math.random() * 89));
+      const lotteryNum = String(Math.floor(100000 + Math.random() * 900000));
+      return {
+        phone: `+251 ${prefix.slice(1)} ${mid1} ${mid2} **`,
+        ticket: lotteryNum
+      };
+    }
+
+    function initRegistrantsTicker() {
+      const track = document.getElementById('registrants-ticker-track');
+      if (!track) return;
+
+      const entries = Array.from({ length: 14 }, () => generateEthiopianRegistrant());
+      // Duplicate array for seamless infinite marquee loop
+      const fullList = [...entries, ...entries];
+
+      track.innerHTML = fullList.map(item => `
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/95 border border-white/10 shadow-sm shrink-0">
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs">
+            <i class="fa-solid fa-circle-check"></i>
+          </span>
+          <span class="font-mono text-xs sm:text-sm font-bold text-slate-100 tracking-wide">
+            ${item.phone}
+          </span>
+          <span class="text-slate-500">|</span>
+          <span class="text-xs sm:text-sm font-extrabold text-amber-400">
+            እጣ ቁጥር: <span class="font-mono">#${item.ticket}</span>
+          </span>
+          <span class="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">
+            ተመዝግቧል
+          </span>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // 2. HERO SLIDING PRIZE CAROUSEL
+    // =========================================================================
+    let currentSlide = 0;
+    let slideInterval;
+
+    function initHeroSlider() {
+      const sliderEl = document.getElementById('hero-slider');
+      const dotsEl = document.getElementById('slider-dots');
+      const featuredItems = PRIZE_ITEMS.filter(item => item.featured);
+
+      sliderEl.innerHTML = featuredItems.map((item, index) => `
+        <div class="hero-slide absolute inset-0 transition-all duration-700 ease-out ${index === 0 ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 pointer-events-none z-0'}"
+             data-index="${index}">
+          <img src="${item.image}"
+               alt="${item.name}"
+               onerror="this.src='https://placehold.co/800x600/0f172a/fbbf24?text=${encodeURIComponent(item.name)}'"
+               class="w-full h-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent"></div>
+
+          <!-- Top Live Pill -->
+          <div class="absolute top-3.5 left-3.5 flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-600/90 text-white text-xs font-black shadow-lg backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              LIVE እጣ
+            </span>
+            <span class="px-3 py-1 rounded-full bg-slate-950/80 border border-amber-400/40 text-amber-300 text-xs font-bold backdrop-blur-md">
+              ${item.badge}
+            </span>
+          </div>
+
+          <!-- Bottom Content Overlay -->
+          <div class="absolute bottom-0 inset-x-0 p-4 sm:p-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <p class="text-xs sm:text-sm text-amber-300 font-bold mb-0.5">${item.subtitle}</p>
+              <h3 class="text-xl sm:text-2xl font-black text-white leading-tight">${item.name}</h3>
+            </div>
+            <a href="${CTA_URL}"
+               class="cta-btn px-5 py-2.5 rounded-xl text-sm sm:text-base font-black inline-flex items-center justify-center gap-2 shrink-0 shadow-xl">
+              <i class="fa-solid fa-ticket"></i>
+              <span>ቁጥር ውሰድ</span>
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      dotsEl.innerHTML = featuredItems.map((_, index) => `
+        <button aria-label="Slide ${index + 1}"
+                onclick="goToSlide(${index})"
+                class="slider-dot h-2.5 rounded-full transition-all duration-300 ${index === 0 ? 'w-8 bg-amber-400' : 'w-2.5 bg-slate-600 hover:bg-slate-400'}">
+        </button>
+      `).join('');
+
+      document.getElementById('prev-slide').addEventListener('click', () => {
+        goToSlide((currentSlide - 1 + featuredItems.length) % featuredItems.length);
+        resetSlideTimer();
+      });
+
+      document.getElementById('next-slide').addEventListener('click', () => {
+        goToSlide((currentSlide + 1) % featuredItems.length);
+        resetSlideTimer();
+      });
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      sliderEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      sliderEl.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) {
+            goToSlide((currentSlide + 1) % featuredItems.length);
+          } else {
+            goToSlide((currentSlide - 1 + featuredItems.length) % featuredItems.length);
+          }
+          resetSlideTimer();
+        }
+      }, { passive: true });
+
+      startSlideTimer();
+    }
+
+    function goToSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      if (!slides.length) return;
+
+      currentSlide = index;
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0', 'scale-105', 'pointer-events-none', 'z-0');
+          slide.classList.add('opacity-100', 'scale-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'scale-100', 'z-10');
+          slide.classList.add('opacity-0', 'scale-105', 'pointer-events-none', 'z-0');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.className = 'slider-dot h-2.5 w-8 rounded-full bg-amber-400 transition-all duration-300';
+        } else {
+          dot.className = 'slider-dot h-2.5 w-2.5 rounded-full bg-slate-600 hover:bg-slate-400 transition-all duration-300';
+        }
+      });
+    }
+
+    function startSlideTimer() {
+      const count = document.querySelectorAll('.hero-slide').length;
+      slideInterval = setInterval(() => {
+        goToSlide((currentSlide + 1) % count);
+      }, 4200);
+    }
+
+    function resetSlideTimer() {
+      clearInterval(slideInterval);
+      startSlideTimer();
+    }
+
+    // =========================================================================
+    // 3. RENDER PRIZE CARDS WITH INDIVIDUAL LIVE COUNTDOWN TIMERS & CTAs
+    // =========================================================================
+    function renderPrizeCards(filter = 'all') {
+      const container = document.getElementById('items-container');
+      const filtered = filter === 'all'
+        ? PRIZE_ITEMS
+        : PRIZE_ITEMS.filter(item => item.category === filter);
+
+      container.innerHTML = filtered.map(item => `
+        <article class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-item is-visible">
+          <div>
+            <!-- Product Image Header -->
+            <div class="relative h-56 sm:h-60 overflow-hidden bg-slate-900">
+              <img src="${item.image}"
+                   alt="${item.name}"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/600x450/0f172a/fbbf24?text=${encodeURIComponent(item.name)}'"
+                   class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f1d] via-transparent to-slate-950/40"></div>
+
+              <!-- Top Badges: Animated LIVE + Category Tag -->
+              <div class="absolute top-3 inset-x-3 flex items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-600/90 text-white text-[11px] font-black shadow-md backdrop-blur-md">
+                  <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-80"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                  </span>
+                  LIVE
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-slate-950/80 border border-white/15 text-amber-300 text-[11px] font-bold backdrop-blur-md">
+                  ${item.badge}
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Body: Title & Countdown Timer -->
+            <div class="p-5 pb-3 space-y-4">
+              <div>
+                <h4 class="text-lg sm:text-xl font-black text-white group-hover:text-amber-300 transition-colors leading-snug">
+                  ${item.name}
+                </h4>
+                <p class="text-xs text-slate-400 mt-1">${item.subtitle}</p>
+              </div>
+
+              <!-- Mobile-Optimized Remaining Days Countdown Box -->
+              <div class="rounded-2xl bg-slate-950/85 border border-white/10 p-3">
+                <div class="flex items-center justify-between text-[11px] text-slate-400 font-bold mb-2">
+                  <span class="flex items-center gap-1.5 text-emerald-400">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>እጣው የሚወጣበት ቀሪ ጊዜ</span>
+                  </span>
+                  <span class="text-amber-400">ቀን / ሰዓት</span>
+                </div>
+
+                <div class="grid grid-cols-4 gap-1.5 text-center countdown-box" data-target="${item.targetTime}">
+                  <div class="bg-slate-900 rounded-xl py-1.5 px-1 border border-amber-400/20">
+                    <div class="cd-days text-base sm:text-lg font-black text-amber-400 font-mono">0${item.daysLeft}</div>
+                    <div class="text-[10px] text-slate-300 font-bold">ቀን</div>
+                  </div>
+                  <div class="bg-slate-900 rounded-xl py-1.5 px-1 border border-white/5">
+                    <div class="cd-hours text-base sm:text-lg font-black text-white font-mono">00</div>
+                    <div class="text-[10px] text-slate-400 font-semibold">ሰዓት</div>
+                  </div>
+                  <div class="bg-slate-900 rounded-xl py-1.5 px-1 border border-white/5">
+                    <div class="cd-mins text-base sm:text-lg font-black text-white font-mono">00</div>
+                    <div class="text-[10px] text-slate-400 font-semibold">ደቂቃ</div>
+                  </div>
+                  <div class="bg-slate-900 rounded-xl py-1.5 px-1 border border-rose-500/25">
+                    <div class="cd-secs text-base sm:text-lg font-black text-rose-400 font-mono">00</div>
+                    <div class="text-[10px] text-slate-400 font-semibold">ሰከንድ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Big Prominent CTA Button for Every Item -->
+          <div class="p-5 pt-2">
+            <a href="${CTA_URL}"
+               class="cta-btn w-full py-3.5 sm:py-4 rounded-2xl text-base sm:text-lg font-black flex items-center justify-center gap-2.5 shadow-lg">
+              <i class="fa-solid fa-ticket text-slate-950"></i>
+              <span>ቁጥር ውሰድ</span>
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+        </article>
+      `).join('');
+
+      updateAllCountdowns();
+    }
+
+    // =========================================================================
+    // 4. REAL-TIME COUNTDOWN UPDATER (TICKS EVERY SECOND FOR ALL ITEMS)
+    // =========================================================================
+    function updateAllCountdowns() {
+      const current = Date.now();
+      document.querySelectorAll('.countdown-box').forEach(box => {
+        const target = Number(box.dataset.target);
+        let diff = Math.max(0, target - current);
+
+        const days = Math.floor(diff / 86400000);
+        diff %= 86400000;
+        const hours = Math.floor(diff / 3600000);
+        diff %= 3600000;
+        const mins = Math.floor(diff / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+
+        box.querySelector('.cd-days').textContent = String(days).padStart(2, '0');
+        box.querySelector('.cd-hours').textContent = String(hours).padStart(2, '0');
+        box.querySelector('.cd-mins').textContent = String(mins).padStart(2, '0');
+        box.querySelector('.cd-secs').textContent = String(secs).padStart(2, '0');
+      });
+    }
+
+    // =========================================================================
+    // 5. CATEGORY FILTER INTERACTION
+    // =========================================================================
+    function initCategoryFilters() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('bg-amber-400', 'text-slate-950');
+            b.classList.add('glass-panel', 'text-slate-200');
+          });
+          btn.classList.remove('glass-panel', 'text-slate-200');
+          btn.classList.add('bg-amber-400', 'text-slate-950');
+          renderPrizeCards(btn.dataset.filter);
+        });
+      });
+    }
+
+    // Initialize Everything on DOM Ready
+    document.addEventListener('DOMContentLoaded', () => {
+      initRegistrantsTicker();
+      initHeroSlider();
+      renderPrizeCards('all');
+      initCategoryFilters();
+      setInterval(updateAllCountdowns, 1000);
+    });
+  </script>
+</body>
+</html>
